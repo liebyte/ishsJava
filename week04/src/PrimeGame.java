@@ -6,15 +6,17 @@ public class PrimeGame {
         int counter = 0;
         int number = sc.nextInt();
 
-        for(int i=1; i<=number; i++) {
+        for(int i=2; i<number; i++) {
             if(number % i == 0) {
-                counter ++; //counter = counter + 1
+                counter ++;
+                break;//counter = counter + 1
             }
+            System.out.print(i + " ");
         }
-        if(counter == 2) {
-            System.out.println(number + "is a prime numnber~");
+        if(counter == 0) {
+            System.out.println(number + " is a prime numnber~");
         }else {
-            System.out.println(number + "is NOT prime number");
+            System.out.println(number + " is NOT prime number!");
         }
     }
 }
