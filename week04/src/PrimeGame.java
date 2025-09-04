@@ -6,7 +6,7 @@ public class PrimeGame {
         int counter = 0;
         int number = sc.nextInt();
 
-        for(int i=1; i<number; i++) {
+        for(int i=1; i<=number; i++) {
             if(number % i == 0) {
                 counter ++; //counter = counter + 1
             }
