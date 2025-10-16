@@ -6,6 +6,9 @@ public class Squirtle extends Pokemon {
 
     @Override
     public void attack(Pokemon target) {
-        System.out.println(name + " -> " + target.getName() + "에게 '뒤통수에 물대포 맞아서 거북목되기' 사용");
+        //System.out.println(getName() + " -> " + target.getName()); //name is private
+        int damage = getAttackPower() + 5;
+        System.out.println(name + " -> " + target.getName() + "에게 '뒷통수에 물대포 맞아서 거북목되기' 사용! (데미지: " + damage + ")"); //name is protected
+        target.setHp(target.getHP() - damage);
     }
 }
