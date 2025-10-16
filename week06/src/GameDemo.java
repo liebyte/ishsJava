@@ -8,7 +8,11 @@ public class GameDemo {
         myPikachu.attack(enemySquirtle);
         enemySquirtle.attack(myPikachu);
 
+        for (int i=0; i<5; i++){
+            enemySquirtle.attack(myPikachu);
+        }
+
         System.out.println(enemySquirtle);
-        System.out.println(yourPikachu);
+        System.out.println(myPikachu);
     }
 }

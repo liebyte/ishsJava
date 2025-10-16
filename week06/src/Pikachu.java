@@ -9,7 +9,9 @@ public class Pikachu extends Pokemon {
         //System.out.println(getName() + " -> " + target.getName()); //name is private
         int damage = getAttackPower() + 5;
         System.out.println(name + " -> " + target.getName() + "에게 '전기충격' 사용! (데미지: " + damage + ")"); //name is protected
-        target.setHp(target.getHP() - damage);
+        //target.setHp(target.getHP() - damage);
+        target.receiveDamage(damage);
+        System.out.println(target.getName() + "의 남은 HP: " + target.getHP());
 
     }
 }
