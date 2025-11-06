@@ -70,26 +70,13 @@ public class GameDemo {
 //        pokemons.Pokemon playerPokemon = new pokemons.Squirtle(120, 21, new fly.NoFly());
 
 
-//        fly.Jetpack jetpack = new fly.Jetpack();
-//
-//        pokemons.Pikachu p1 = new pokemons.Pikachu(100, 27, new fly.NoFly());
-//        //p1.setFlyingTool(new fly.NoFly());
-//        p1.performFlyable();
-//        p1.setFlyingTool(jetpack);  // 젯팩 추진기 득템
-//        p1.performFlyable();
-//
-////        pokemons.Pikachu p2 = new pokemons.Pikachu(100, 28);
-//        //pokemons.Charizard c1 = new pokemons.Charizard(200, 40, new fly.Jetpack());
-//        pokemons.Charizard c1 = new pokemons.Charizard(200, 40, new fly.Wings());
-//        //c1.setFlyingTool(new fly.Wings());
-//        c1.performFlyable();
-////        pokemons.Squirtle s1 = new pokemons.Squirtle(120, 21);
-//
-//        System.out.println("배틀 시작!");
-//        System.out.println(p1);
-//        System.out.println(c1);
-//        System.out.println("==============");
-//
+
+       System.out.println("배틀 시작!");
+       System.out.println("==============");
+
+       for(int i = 0; i<playerPokemon.skills.length; i++) {
+           System.out.println((i+1) + ". " + playerPokemon.skills[i].getName() + "(" + playerPokemon.skills[i].getDamage() + ")");
+       }
 //        int turn = 1;
 //        while(!p1.isFainted() && !c1.isFainted()){
 //            System.out.println("턴 " + turn + "시작.");
