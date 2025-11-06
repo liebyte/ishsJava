@@ -17,6 +17,7 @@ public abstract class Pokemon {
     }
     public void setHp(int hp) {this.hp = hp;}
 
+
     public abstract void attack(Pokemon target) ;
     public void receiveDamage(int damage){
         hp = hp - damage;

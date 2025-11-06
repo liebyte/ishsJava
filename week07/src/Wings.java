@@ -1,6 +1,6 @@
 public class Wings implements Flyable{
     @Override
-    public void fly() {
+    public void fly(Pokemon pokemon) {
         System.out.println("날개를 펼쳐 훨훨 날아가요~");
     }
 }
