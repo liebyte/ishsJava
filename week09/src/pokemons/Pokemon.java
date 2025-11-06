@@ -2,7 +2,7 @@ package pokemons;
 
 import fly.Flyable;
 
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public abstract class Pokemon {
     private String name;
@@ -42,7 +42,7 @@ public abstract class Pokemon {
         this.flyingTool.fly(this);
     }
 
-    public abstract void attack(Pokemon target);
+    public abstract void attack(Pokemon target, int choice);
     public void receiveDamage(int damage){
         hp = hp - damage;
         if(hp < 0) hp = 0;
