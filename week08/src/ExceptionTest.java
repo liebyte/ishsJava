@@ -6,8 +6,13 @@ public class ExceptionTest {
         System.out.println("input numerator : ");
         int numerator = scanner.nextInt();
         System.out.println("Input denominator : ");
+        //double denominator = scanner.nextDouble();
         int denominator = scanner.nextInt();
 
-        System.out.println(numerator/denominator);
+        if(denominator == 0){
+            System.out.println("분모에 0이 올 수 없습니다!");
+        } else {
+            System.out.println(numerator/denominator);
+        }
     }
 }
