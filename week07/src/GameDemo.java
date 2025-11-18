@@ -2,11 +2,11 @@ public class GameDemo {
     public static void main(String[] args) {
         Pikachu p1 = new Pikachu(100, 27);
         Pikachu p2 = new Pikachu(100, 28);
+        Charizard c1 = new Charizard(200, 400);
         Squirtle s1 = new Squirtle(128, 21);
 
         System.out.println("배틀 시작!");
         System.out.println(p1);
-        System.out.println(p2);
         System.out.println(s1);
         System.out.println("===================");
 
