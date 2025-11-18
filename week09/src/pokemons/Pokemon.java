@@ -2,27 +2,25 @@ package pokemons;
 
 import fly.Flyable;
 
-import java.util.ArrayList;
-
 public abstract class Pokemon {
     private String name;
+//    protected String name;
     private int hp;
-    private int attackPower;
-    protected Flyable flyingTool;  // has-a (Aggregation)
-    public ArrayList<Skill> skills = new ArrayList<>();
+    protected int attackPower;
+    protected Flyable flyingTool; // has-a (Aggregration)
 
-    public Pokemon(String name, int hp, int attackPower, Flyable flyingTool, ArrayList<Skill> skills){
-        this.name = name;
+
+    public Pokemon(String name, int hp, int attackPower, Flyable flyingTool) {
+        this.name  = name;
         this.hp = hp;
         this.attackPower = attackPower;
         this.flyingTool = flyingTool;
-        this.skills = skills;
     }
 
-    public String getName(){
+    public  String  getName() {
         return name;
     }
-    public int getHp(){
+    public int getHp() {
         return hp;
     }
     public int getAttackPower() {
@@ -37,22 +35,22 @@ public abstract class Pokemon {
         this.flyingTool = flyingTool;
     }
 
-    public void performFlyable(){
+    public void performFlyable() {
         this.flyingTool.fly(this);
     }
 
-    public abstract void attack(Pokemon target, int choice);
+    public abstract void attack(Pokemon target) ;
     public void receiveDamage(int damage){
         hp = hp - damage;
         if(hp < 0) hp = 0;
     }
 
-    public boolean isFainted(){
+    public boolean isFainted() {
         return hp <= 0;
     }
 
     @Override
     public String toString() {
-        return name + " (HP : " + hp + ", AttackPower : " + attackPower + ")" ;
+        return name + "(HP : " + hp + ", AttackPower : " + attackPower + ")";
     }
 }

@@ -2,9 +2,9 @@ package fly;
 
 import pokemons.Pokemon;
 
-public class Jetpack implements Flyable {
+public class Jetpack implements Flyable{
     @Override
     public void fly(Pokemon pokemon) {
-        System.out.println(pokemon.getName() +"이(가) 젯팩 추진기로 기동성있게 날아갑니다! 쓩~");
+        System.out.println(pokemon.getName() + "(이)가 제트기가 되. 쓩~");
     }
 }
