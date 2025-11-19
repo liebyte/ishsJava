@@ -61,21 +61,44 @@ public class GameDemo {
         System.out.println("배틀 시작!");
         System.out.println("==============");
 
-        charizardSkills.add(new Skill("Inferno", 100));
+
         while(true){
-            for(int i = 0; i < playerPokemon.skills.size(); i++) {
-                System.out.println((i+1) + ". " + playerPokemon.skills.get(i).getName() + "(" + playerPokemon.skills.get(i).getDamage() + ")");
+            try{
+                System.out.println("1) 전투 시작  2) 도망치기  3) 종료하기 : ");
+                int beforeBattingNumber = scanner.nextInt();
+
+                if (beforeBattingNumber - 1 == 0){
+                    charizardSkills.add(new Skill("Inferno", 100));
+                    while(true){
+                        for(int i = 0; i < playerPokemon.skills.size(); i++) {
+                            System.out.println((i+1) + ". " + playerPokemon.skills.get(i).getName() + "(" + playerPokemon.skills.get(i).getDamage() + ")");
+                        }
+
+                        System.out.print("Select Skill : ");
+                        int skillNumber = scanner.nextInt() - 1;
+
+                        playerPokemon.attack(enemyPokemon, skillNumber);
+                        enemyPokemon.attack(playerPokemon, (int)(Math.random() * 3));
+
+                        if(enemyPokemon.isFainted() || playerPokemon.isFainted())
+                            break;
+                    }
+                    System.out.println("배틀 종료");
+                    break;
+                } else if (beforeBattingNumber - 1 == 1){
+                    System.out.println("앗! 비겁한 포켓몬이 되었습니다!");
+                    break;
+                } else if (beforeBattingNumber - 1 == 2) {
+                    System.out.println("게임을 종료합니다.");
+                    break;
+                } else {
+                    System.out.println("메뉴에서 골라주세요.");
+                }
+            } catch (InputMismatchException err) {
+                System.out.println("숫자로 입력하세요. 메뉴에서 골라주세요.");
+                //System.out.println(err.getMessage());
+                scanner.nextLine(); // 버퍼에 남아있는 값(여기선 문자열) 제거
             }
-
-            System.out.print("Select Skill : ");
-            int skillNumber = scanner.nextInt() - 1;
-
-            playerPokemon.attack(enemyPokemon, skillNumber);
-            enemyPokemon.attack(playerPokemon, (int)(Math.random() * 3));
-
-            if(enemyPokemon.isFainted() || playerPokemon.isFainted())
-                break;
         }
-        System.out.println("배틀 종료");
     }
 }
