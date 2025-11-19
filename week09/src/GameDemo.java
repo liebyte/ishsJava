@@ -2,28 +2,26 @@ import fly.NoFly;
 import fly.Wings;
 import pokemons.*;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GameDemo {
     public static void main(String[] args) {
-        Skill[]  pikachuSkills = {
-                new Skill("Nuzzle", 20),
-                new Skill("ThunderShock", 40),
-                new Skill("Quick Attack", 40)
-        };
+        ArrayList<Skill> pikachuSkills = new ArrayList<>();
+        pikachuSkills.add(new Skill("Nuzzle", 20));
+        pikachuSkills.add(new Skill("ThunderShock", 40));
+        pikachuSkills.add(new Skill("Quick Attack", 40));
 
-        Skill[] squirtleSkills = {
-                new Skill("Tackle", 40),
-                new Skill("Water Gun", 40),
-                new Skill("Rapid Spin", 50)
-        };
+        ArrayList<Skill> squirtleSkills = new ArrayList<>();
+        squirtleSkills.add(new Skill("Tackle", 40));
+        squirtleSkills.add(new Skill("Water Gun", 40));
+        squirtleSkills.add(new Skill("Rapid Spin", 50));
 
-        Skill[] charizardSkills = {
-                new Skill("Scratch", 40),
-                new Skill("Dragon Breath", 60),
-                new Skill("Flare Blitz", 120)
-        };
+        ArrayList<Skill> charizardSkills = new ArrayList<>();
+        charizardSkills.add(new Skill("Scratch", 40));
+        charizardSkills.add(new Skill("Dragon Breath", 60));
+        charizardSkills.add(new Skill("Flare Blitz", 120));
 
         Pokemon playerPokemon = null;
         Scanner scanner = new Scanner(System.in);
@@ -63,9 +61,10 @@ public class GameDemo {
         System.out.println("배틀 시작!");
         System.out.println("==============");
 
+        charizardSkills.add(new Skill("Inferno", 100));
         while(true){
-            for(int i = 0; i < playerPokemon.skills.length ; i++) {
-                System.out.println((i+1) + ". " + playerPokemon.skills[i].getName() + "(" + playerPokemon.skills[i].getDamage() + ")");
+            for(int i = 0; i < playerPokemon.skills.size(); i++) {
+                System.out.println((i+1) + ". " + playerPokemon.skills.get(i).getName() + "(" + playerPokemon.skills.get(i).getDamage() + ")");
             }
 
             System.out.print("Select Skill : ");
