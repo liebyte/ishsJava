@@ -69,6 +69,8 @@ public class GameDemo {
 
                 if (beforeBattingNumber - 1 == 0){
                     charizardSkills.add(new Skill("Inferno", 100));
+                    playerPokemon.performFlyable();
+                    enemyPokemon.performFlyable();
                     while(true){
                         for(int i = 0; i < playerPokemon.skills.size(); i++) {
                             System.out.println((i+1) + ". " + playerPokemon.skills.get(i).getName() + "(" + playerPokemon.skills.get(i).getDamage() + ")");
